@@ -9,20 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 📥 Checkout code
         uses: actions/checkout@v3
 
-      - name: Log in to Docker Hub
+      - name: 🔐 Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - name: Build Docker image
+      - name: 🐳 Build Docker image
         run: docker build -t php-app .
 
-      - name: Tag Docker image
-        run: docker tag php-app rahul003hub/php-workflow:latest
+      - name: 🏷️ Tag Docker image
+        run: docker tag php-app rahulhub1313/php-workflow:latest
 
-      - name: Push to Docker Hub
-        run: docker push rahul003hub/php-workflow:latest
+      - name: 🚀 Push Docker image to Docker Hub
+        run: docker push rahulhub1313/php-workflow:latest
+
 
 
 
